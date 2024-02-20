@@ -1,4 +1,5 @@
 ![CI](https://github.com/cha0s/redux-data-router/actions/workflows/ci.yml/badge.svg)
+[![npm version](https://badge.fury.io/js/redux-data-router.svg)](https://badge.fury.io/js/redux-data-router)
 
 # ⚙️ `redux-data-router` 🔩
 

@@ -1,7 +1,7 @@
 import {expect} from 'chai';
 
 import {createMemoryRouter} from 'react-router';
-import {compose, createStore} from 'redux';
+import {combineReducers, compose, createStore} from 'redux';
 
 // Node 16.x
 import 'whatwg-fetch';
@@ -21,7 +21,7 @@ import {
   replace,
 } from 'redux-data-router';
 
-const routerLocationSelector = (state) => state?.location || null;
+const routerLocationSelector = (state) => state.router?.location || null;
 
 let actions;
 let router;
@@ -50,7 +50,10 @@ beforeEach(() => {
   };
   actions = [];
   router = createMemoryRouter(routes);
-  store = createStore(reducer, compose(createEnhancer(router), spy));
+  store = createStore(
+    combineReducers({router: reducer}),
+    compose(createEnhancer(router), spy),
+  );
 });
 
 it('integrates with redux', () => {

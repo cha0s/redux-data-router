@@ -1,0 +1,43 @@
+on:
+  push:
+    branches:
+      - master
+
+name: release-please
+jobs:
+  release-please:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: write
+      id-token: write
+      pull-requests: write
+
+    steps:
+
+      - uses: GoogleCloudPlatform/release-please-action@v3
+        id: release
+        with:
+          token: ${{secrets.RDR_GITHUB_TOKEN}}
+          command: manifest
+          config-file: build/release-please-config.json
+          manifest-file: build/.release-please-manifest.json
+
+      - if: ${{steps.release.outputs.releases_created}}
+        uses: actions/checkout@v4
+
+      - if: ${{steps.release.outputs.releases_created}}
+        uses: actions/setup-node@v4
+        with:
+          cache: "npm"
+          node-version: lts/iron
+          registry-url: "https://registry.npmjs.org"
+
+      - if: ${{steps.release.outputs.releases_created}}
+        env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+        run: |
+          npm ci
+          npm run build
+          cd dist/fleck
+          npm publish --provenance

@@ -1,0 +1,3 @@
+{
+  "eslint.options": {"overrideConfigFile": "node_modules/@flecks/build/build/eslint.config.js"},
+}

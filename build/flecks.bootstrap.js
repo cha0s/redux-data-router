@@ -1,0 +1,3 @@
+exports.dependencies = [];
+
+exports.hooks = {};

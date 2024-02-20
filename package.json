@@ -1,0 +1,30 @@
+{
+  "name": "redux-data-router",
+  "author": "cha0s",
+  "license": "MIT",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "flecks build",
+    "clean": "flecks clean",
+    "ci": "act -W .github/workflows/ci.yml",
+    "lint": "flecks lint",
+    "test": "flecks test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cha0s/redux-data-router.git"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "index.js"
+  ],
+  "devDependencies": {
+    "@flecks/build": "^4.0.0",
+    "@flecks/fleck": "^4.0.0",
+    "react-router": "^6.22.1",
+    "redux": "^5.0.1",
+    "whatwg-fetch": "^3.6.20"
+  }
+}

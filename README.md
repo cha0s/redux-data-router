@@ -11,7 +11,7 @@ methods :smile:)
 ## Usage with `router`
 
 ```js
-import {createEnhancer, navigate, reducer} from 'react-data-router';
+import {createEnhancer, reducer} from 'redux-data-router';
 
 // Create your data router like normal.
 const router = createBrowserRouter(routes);
@@ -85,7 +85,7 @@ Router. This approach is no longer practical with current (February 2024) React 
 semantics.
 
 All is not lost, however! Instead of `history.listen`, we have a new API: `router.subscribe`.
-**redux-data-router** subscribes to changes through this channel to continuously synchronize the
+**`redux-data-router`** subscribes to changes through this channel to continuously synchronize the
 Redux state with the router state.
 
 ### Is this a *real* single source of truth?

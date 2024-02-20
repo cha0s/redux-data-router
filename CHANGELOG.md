@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/cha0s/redux-data-router/compare/redux-data-router-v1.0.0...redux-data-router-v1.0.1) (2024-02-20)
+
+
+### Bug Fixes
+
+* bump for typos ([92a0ec8](https://github.com/cha0s/redux-data-router/commit/92a0ec89f974785319175d12e8f8005eb5a55b2f))
+
 ## [1.0.0](https://github.com/cha0s/redux-data-router/compare/redux-data-router-v1.0.0...redux-data-router-v1.0.0) (2024-02-20)
 
 

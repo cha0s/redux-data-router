@@ -2,7 +2,7 @@
   "name": "redux-data-router",
   "author": "cha0s",
   "license": "MIT",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "scripts": {
     "build": "flecks build",
     "clean": "flecks clean",

@@ -15,6 +15,15 @@
     "lint": "flecks lint",
     "test": "flecks test"
   },
+  "files": [
+    "lib/**/*",
+    "index.js",
+    "actions.js",
+    "enhancer.js",
+    "reducer.js",
+    "LICENSE.txt",
+    "README.md"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cha0s/redux-data-router.git"

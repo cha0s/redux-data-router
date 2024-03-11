@@ -1,6 +1,6 @@
 // Import esbuild as an ES module
 import esbuild from 'esbuild';
-
+  
 // Use top-level await to handle the promise returned by esbuild.build
 try {
   await esbuild.build({

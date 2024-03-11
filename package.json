@@ -3,9 +3,13 @@
   "author": "cha0s",
   "license": "MIT",
   "version": "1.0.1",
+  "type": "module",
   "scripts": {
-    "build": "flecks build",
-    "clean": "flecks clean",
+    "build": "node esbuild.config.js",
+    "build:clean": "rimraf ./lib",
+    "build:copyFiles": "cp -rf package.json LICENSE.txt README.md lib/.",
+    "dist": "cd lib && yarn publish",
+    "dist:prepare": "yarn run build:clean && yarn run build && yarn run build:copyFiles",
     "ci": "act -W .github/workflows/ci.yml",
     "lint": "flecks lint",
     "test": "flecks test"
@@ -23,6 +27,8 @@
   "devDependencies": {
     "@flecks/build": "^4.0.0",
     "@flecks/fleck": "^4.0.0",
+    "esbuild": "^0.20.1",
+    "rimraf": "3.0.0",
     "react-router": "^6.22.1",
     "redux": "^5.0.1",
     "whatwg-fetch": "^3.6.20"

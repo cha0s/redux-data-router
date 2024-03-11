@@ -2,7 +2,7 @@
   "name": "@cdmbase/redux-data-router",
   "author": "cha0s",
   "license": "MIT",
-  "version": "1.0.3",
+  "version": "1.0.6",
   "type": "module",
   "main": "index.js",
   "scripts": {
@@ -16,7 +16,6 @@
     "test": "flecks test"
   },
   "files": [
-    "lib/**/*",
     "index.js",
     "actions.js",
     "enhancer.js",
@@ -24,6 +23,11 @@
     "LICENSE.txt",
     "README.md"
   ],
+  "exports": {
+    ".": {
+      "import": "./index.js"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cha0s/redux-data-router.git"

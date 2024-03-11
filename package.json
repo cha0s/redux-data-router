@@ -2,7 +2,7 @@
   "name": "@cdmbase/redux-data-router",
   "author": "cha0s",
   "license": "MIT",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "type": "module",
   "main": "index.js",
   "scripts": {

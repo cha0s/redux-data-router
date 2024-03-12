@@ -11,7 +11,7 @@ function actionCreator(subtype, createPayload) {
   return action;
 }
 
-export const changeLocation = actionCreator(LOCATION_CHANGE);
+export const changeLocation = actionCreator('LOCATION_CHANGE');
 export const navigate = actionCreator('NAVIGATION', (to, state) => ({state, to}));
 
 // Compatibility with history actions.

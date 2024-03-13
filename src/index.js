@@ -1,3 +1,3 @@
-export * from './actions';
-export {createEnhancer, locationsAreEqual} from './enhancer';
-export {reducer} from './reducer';
+export * from './actions.js';
+export {createEnhancer, locationsAreEqual} from './enhancer.js';
+export {reducer} from './reducer.js';

@@ -1,4 +1,4 @@
-import {changeLocation, navigate} from './actions';
+import {changeLocation, navigate} from './actions.js';
 
 // Test two location objects for equality.
 export function locationsAreEqual(l, r) {

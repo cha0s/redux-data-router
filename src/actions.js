@@ -1,3 +1,5 @@
+export const LOCATION_CHANGE = '@@router/LOCATION_CHANGE';
+
 function actionCreator(subtype, createPayload) {
   const type = `@@router/${subtype}`;
   const action = (...payload) => ({

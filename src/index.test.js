@@ -1,10 +1,6 @@
-import {expect} from 'chai';
-
 import {createMemoryRouter} from 'react-router';
 import {combineReducers, compose, createStore} from 'redux';
-
-// Node 16.x
-import 'whatwg-fetch';
+import {beforeEach, describe, expect, test} from 'vitest';
 
 import {
   back,
@@ -19,7 +15,7 @@ import {
   push,
   reducer,
   replace,
-} from 'redux-data-router';
+} from './index.js';
 
 let actions;
 let router;
@@ -67,7 +63,7 @@ function createTestCases(routerKey) {
     }
   });
 
-  it('integrates with redux', () => {
+  test('integrates with redux', () => {
     expect(router.state.location.pathname)
       .to.equal('/');
     expect(locationsAreEqual(router.state.location, routerLocationSelector(store.getState())))
@@ -78,7 +74,7 @@ function createTestCases(routerKey) {
       .to.equal(changeLocation.type);
   });
 
-  it('tracks router updates', () => {
+  test('tracks router updates', () => {
     router.navigate('/about');
     router.navigate('/contact');
     expect(router.state.location.pathname)
@@ -93,7 +89,7 @@ function createTestCases(routerKey) {
       .to.equal(actions[2].type);
   });
 
-  it('implements back action', () => {
+  test('implements back action', () => {
     router.navigate('/about');
     store.dispatch(back());
     expect(router.state.location.pathname)
@@ -105,7 +101,7 @@ function createTestCases(routerKey) {
       .to.equal(3);
   });
 
-  it('implements forward action', () => {
+  test('implements forward action', () => {
     router.navigate('/about');
     store.dispatch(back());
     store.dispatch(forward());
@@ -118,7 +114,7 @@ function createTestCases(routerKey) {
       .to.equal(4);
   });
 
-  it('implements go action', () => {
+  test('implements go action', () => {
     router.navigate('/about');
     router.navigate('/contact');
     store.dispatch(go(-2));
@@ -131,7 +127,7 @@ function createTestCases(routerKey) {
       .to.equal(4);
   });
 
-  it('implements goBack action', () => {
+  test('implements goBack action', () => {
     router.navigate('/about');
     store.dispatch(goBack());
     expect(router.state.location.pathname)
@@ -143,7 +139,7 @@ function createTestCases(routerKey) {
       .to.equal(3);
   });
 
-  it('implements goForward action', () => {
+  test('implements goForward action', () => {
     router.navigate('/about');
     router.navigate('/contact');
     store.dispatch(goBack());
@@ -157,7 +153,7 @@ function createTestCases(routerKey) {
       .to.equal(5);
   });
 
-  it('implements push action', () => {
+  test('implements push action', () => {
     store.dispatch(push('/about'));
     expect(router.state.location.pathname)
       .to.equal('/about');
@@ -176,7 +172,7 @@ function createTestCases(routerKey) {
       .to.equal(3);
   });
 
-  it('implements replace action', () => {
+  test('implements replace action', () => {
     router.navigate('/about');
     store.dispatch(replace('/contact'));
     expect(router.state.location.pathname)
@@ -188,7 +184,7 @@ function createTestCases(routerKey) {
       .to.equal(3);
   });
 
-  it('implements navigate action', () => {
+  test('implements navigate action', () => {
     router.navigate('/about');
     store.dispatch(navigate('/contact'));
     expect(router.state.location.pathname)

@@ -1,3 +1,0 @@
-exports.dependencies = [];
-
-exports.hooks = {};

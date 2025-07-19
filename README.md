@@ -6,7 +6,7 @@
 **`redux-data-router`** is a clean-room spiritual successor to projects like
 **redux-first-history**.
 
-You only need to bring your **React Router v6** data  `router`, no need to manage a `history` object (or use `UNSTABLE_`
+You only need to bring your **React Router v6+** data `router`, no need to manage a `history` object (or use `UNSTABLE_`
 methods :smile:)
 
 ## Usage with `router`

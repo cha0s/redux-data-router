@@ -18,10 +18,8 @@ jobs:
       - uses: GoogleCloudPlatform/release-please-action@v3
         id: release
         with:
-          token: ${{secrets.RDR_GITHUB_TOKEN}}
+          token: ${{secrets.RELEASE_PLEASE_GITHUB_TOKEN}}
           command: manifest
-          config-file: build/release-please-config.json
-          manifest-file: build/.release-please-manifest.json
 
       - if: ${{steps.release.outputs.releases_created}}
         uses: actions/checkout@v4
@@ -35,9 +33,8 @@ jobs:
 
       - if: ${{steps.release.outputs.releases_created}}
         env:
-          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+          NODE_AUTH_TOKEN: ${{secrets.RELEASE_PLEASE_NPM_TOKEN}}
         run: |
           npm ci
           npm run build
-          cd dist/fleck
-          npm publish --provenance
+          npm publish --provenance --access public
